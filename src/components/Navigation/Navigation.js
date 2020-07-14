@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const NavigationWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,21 +11,20 @@ const NavigationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   background: inherit;
 
   &:before {
-  content: ' ';
-  background: inherit; 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0; 
-  bottom: 0;
-  box-shadow: inset 0 0 0 100px rgba(0,0,0,0.1);
-  filter: blur(5px);
-}
-
+    content: " ";
+    background: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.1);
+    filter: blur(5px);
+  }
 `
 
 const StyledMenuList = styled.ul`
@@ -57,7 +56,7 @@ const Navigation = () => (
     <StyledMenuList>
       <StyledNavItem>
         <StyledLink to="/">Home</StyledLink>
-      </StyledNavItem>     
+      </StyledNavItem>
     </StyledMenuList>
   </NavigationWrapper>
 )

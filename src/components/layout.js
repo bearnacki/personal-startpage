@@ -10,10 +10,21 @@ const StyledWrapper = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
   background-image: url(${backgroundImage});
   background-size: cover;
   background-attachment: fixed;
+`
+
+const MainContentWrapper = styled.div`
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 const Layout = ({ children }) => {
@@ -30,6 +41,9 @@ const Layout = ({ children }) => {
   return (
     <StyledWrapper>
       <Navigation />
+      <MainContentWrapper>
+        {children}
+      </MainContentWrapper>
     </StyledWrapper>
   )
 }
