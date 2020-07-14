@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const NavigationWrapper = styled.div`
+const NavigationWrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
@@ -31,10 +31,6 @@ const StyledMenuList = styled.ul`
   position: relative;
   padding: 0;
   list-style: none;
-  color: white;
-  display: flex;
-  font-weight: 500;
-  font-size: 1em;
   z-index: 2;
 `
 
@@ -43,12 +39,19 @@ const StyledNavItem = styled.li`
   postion: relative;
   margin-left: 20px;
   height: 100%;
+  display: inline-block;
+  padding: 0 5px;
 `
 
 const StyledLink = styled(Link)`
-  color: white;
+  color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.2em;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 1),
+               0 0 2px rgba(255, 255, 255, 1),
+               0 0 10px rgba(225, 80, 40, 1)
 `
 
 const Navigation = () => (
