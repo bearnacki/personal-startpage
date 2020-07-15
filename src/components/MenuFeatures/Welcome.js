@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+
+const WelcomeWrapper = styled.div`
+  flex-basis: 550px;
+  text-align: center;
+  color: #fff;
+  ${"" /* box-shadow: inset 0px 0px 1000px 1px rgba(0,0,0,0.5); */}
+`
+const InitialWelcome = styled.p`
+  font-size: 3em;
+  display: block;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 10px 0;
+`
+
+const CheeringWelcome = styled.p`
+  font-size: 1.5em;
+  display: block;
+  margin: 0;
+  padding: 10px 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  &::after {
+    position: relative;
+    content: "";
+    width: 60%;
+    left: 20%;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 2px solid #fff;
+  }
+`
+
+const Welcome = () => {
+  const [time, setTime] = useState(new Date())
+
+  function tick() {
+    setTime(new Date())
+  }
+
+  useEffect(() => {
+    let interval = setInterval(() => tick(), 1000)
+
+    return function cleanup() {
+      clearInterval(interval)
+    }
+  })
+
+  return (
+    <WelcomeWrapper>
+      <InitialWelcome>Hello Patryk!</InitialWelcome>
+      <CheeringWelcome>
+        Hope You have a great day! {time.toLocaleTimeString()}
+      </CheeringWelcome>
+    </WelcomeWrapper>
+  )
+}
+
+export default Welcome

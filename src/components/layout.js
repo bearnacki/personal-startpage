@@ -19,12 +19,13 @@ const StyledWrapper = styled.div`
 `
 
 const MainContentWrapper = styled.div`
-  margin-top: 40px;
-  width: 100%;
+  margin: 80px auto 0 auto;
+  width: 800px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 `
 
 const Layout = ({ children }) => {
@@ -41,9 +42,7 @@ const Layout = ({ children }) => {
   return (
     <StyledWrapper>
       <Navigation />
-      <MainContentWrapper>
-        {children}
-      </MainContentWrapper>
+      <MainContentWrapper>{children}</MainContentWrapper>
     </StyledWrapper>
   )
 }
