@@ -7,7 +7,7 @@ const NavigationWrapper = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +32,8 @@ const StyledMenuList = styled.ul`
   padding: 0;
   list-style: none;
   z-index: 2;
+  height: 100%;
+  text-align: center;
 `
 
 const StyledNavItem = styled.li`
@@ -40,11 +42,12 @@ const StyledNavItem = styled.li`
   margin-left: 20px;
   height: 100%;
   display: inline-block;
-  padding: 0 5px;
 `
 
 const StyledLink = styled(Link)`
   color: #FFF;
+  padding: 15px 0;
+  display: block;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
