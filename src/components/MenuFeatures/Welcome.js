@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import Clock from './Clock'
 
 const WelcomeWrapper = styled.div`
   flex-basis: 550px;
   text-align: center;
   color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   ${"" /* box-shadow: inset 0px 0px 1000px 1px rgba(0,0,0,0.5); */}
 `
 const InitialWelcome = styled.p`
@@ -13,6 +17,7 @@ const InitialWelcome = styled.p`
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 10px 0;
+  width: 100%;
 `
 
 const CheeringWelcome = styled.p`
@@ -21,6 +26,7 @@ const CheeringWelcome = styled.p`
   margin: 0;
   padding: 10px 0;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
 
   &::after {
     position: relative;
@@ -51,10 +57,11 @@ const Welcome = () => {
 
   return (
     <WelcomeWrapper>
-      <InitialWelcome>Hello Patryk!</InitialWelcome>
+      <InitialWelcome>Hello Patryk</InitialWelcome>
       <CheeringWelcome>
-        Hope You have a great day! {time.toLocaleTimeString()}
+        Hope you have a great day
       </CheeringWelcome>
+      <Clock />
     </WelcomeWrapper>
   )
 }
