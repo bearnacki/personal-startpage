@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
-const WelcomeWrapper = styled.div`
+const TimeWrapper = styled.div`
   flex: 1 0 200px;
   text-align: center;
   color: #FFF;
@@ -41,10 +41,10 @@ const Clock = () => {
   })
 
   return (
-    <WelcomeWrapper>
+    <TimeWrapper>
       <TimeParagraph>{time.toLocaleTimeString()}</TimeParagraph>
       <DateParagraph>{time.toLocaleDateString()}</DateParagraph>
-    </WelcomeWrapper>
+    </TimeWrapper>
   )
 }
 
