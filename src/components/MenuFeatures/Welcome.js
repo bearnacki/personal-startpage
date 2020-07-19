@@ -18,10 +18,12 @@ const InitialWelcome = styled.p`
   margin: 0;
   padding: 10px 0;
   width: 100%;
+  font-weight: bold;
 `
 
 const CheeringWelcome = styled.p`
   font-size: 1.5em;
+  font-weight: bold;
   display: block;
   margin: 0;
   padding: 10px 0;
@@ -58,9 +60,7 @@ const Welcome = () => {
   return (
     <WelcomeWrapper>
       <InitialWelcome>Hello Patryk</InitialWelcome>
-      <CheeringWelcome>
-        Hope you have a great day
-      </CheeringWelcome>
+      <CheeringWelcome>Hope you have a great day</CheeringWelcome>
       <Clock />
     </WelcomeWrapper>
   )

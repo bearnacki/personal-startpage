@@ -5,6 +5,7 @@ const WelcomeWrapper = styled.div`
   flex: 1 0 200px;
   text-align: center;
   color: #FFF;
+  font-weight: bold;
 `
 
 const TimeParagraph = styled.p`
