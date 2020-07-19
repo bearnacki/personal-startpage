@@ -43,20 +43,6 @@ const CheeringWelcome = styled.p`
 `
 
 const Welcome = () => {
-  const [time, setTime] = useState(new Date())
-
-  function tick() {
-    setTime(new Date())
-  }
-
-  useEffect(() => {
-    let interval = setInterval(() => tick(), 1000)
-
-    return function cleanup() {
-      clearInterval(interval)
-    }
-  })
-
   return (
     <WelcomeWrapper>
       <InitialWelcome>Hello Patryk</InitialWelcome>
