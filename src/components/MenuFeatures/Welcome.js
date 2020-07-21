@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Clock from './Clock'
+import Weather from './Weather'
 
 const WelcomeWrapper = styled.div`
   flex-basis: 550px;
@@ -48,6 +49,7 @@ const Welcome = () => {
       <InitialWelcome>Hello Patryk</InitialWelcome>
       <CheeringWelcome>Hope you have a great day</CheeringWelcome>
       <Clock />
+      <Weather />
     </WelcomeWrapper>
   )
 }
