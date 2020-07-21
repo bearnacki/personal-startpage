@@ -4,7 +4,7 @@ import Clock from './Clock'
 import Weather from './Weather'
 
 const WelcomeWrapper = styled.div`
-  flex-basis: 550px;
+  flex-basis: 100%;
   text-align: center;
   color: #fff;
   display: flex;
