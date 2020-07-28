@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 const TimeWrapper = styled.div`
-  flex: 0 0 45%;
+  flex: 1 0 50%;
   text-align: center;
   color: #FFF;
   font-weight: bold;
