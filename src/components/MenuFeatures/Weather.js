@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const WeatherWrapper = styled.div`
-	flex: 0 0 45%;
+	flex: 1 0 50%;
 	text-align: center;
   display: flex;
-  flex-wrap: wrap;
+	flex-direction: column;
   justify-content: center;
 	color: #fff;
 	font-weight: bold;
@@ -13,15 +13,16 @@ const WeatherWrapper = styled.div`
 `;
 
 const WeatherIcon = styled.img`
-  display: block;
-  max-width: 50%;
-  max-height: 50%;
-  margin: 0 30%;
+	flex-basis: 100%;
+	padding: 0 35%;
+`
+const WeatherInfo = styled.div`
+	flex-basis: 100%;
 `
 
-const WeatherParagraph = styled.p`
+const WeatherInfoParagraph = styled.p`
 	font-size: 1em;
-  flex-basis: 20%;
+  width: 20%;
 	display: inline-block;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	padding: 0 10px;
@@ -39,15 +40,21 @@ const Weather = () => {
       .catch((err) => { console.log(err)});
 	}, []);
 
+	const setCelsiusDegree = (calvinTemp) => (
+		Math.round((calvinTemp - 273.15) * 10) / 10
+	)
+
 	return (
 		<WeatherWrapper>
 			{weatherData.weather ? (
         <>
-				<WeatherIcon src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="weather-icon" />
-        <WeatherParagraph>MAX: {weatherData.main.temp_max}</WeatherParagraph>
-        <WeatherParagraph>MIN: {weatherData.main.temp_min}</WeatherParagraph>
-        <WeatherParagraph>FEEL: {weatherData.main.feels_like}</WeatherParagraph>
-        <WeatherParagraph>HUM: {weatherData.main.humidity}%</WeatherParagraph>
+					<WeatherIcon src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="weather-icon" />
+					<WeatherInfo>
+						<WeatherInfoParagraph>MAX: {setCelsiusDegree(weatherData.main.temp_max)} &deg;C</WeatherInfoParagraph>
+						<WeatherInfoParagraph>MIN: {setCelsiusDegree(weatherData.main.temp_min)} &deg;C</WeatherInfoParagraph>
+						<WeatherInfoParagraph>FEEL: {setCelsiusDegree(weatherData.main.feels_like)} &deg;C</WeatherInfoParagraph>
+						<WeatherInfoParagraph>HUM: {weatherData.main.humidity}%</WeatherInfoParagraph>
+					</WeatherInfo>
         </>
       ) : (
 				<p>Loading</p>
