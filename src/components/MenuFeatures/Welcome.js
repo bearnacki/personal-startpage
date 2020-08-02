@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Clock from './Clock'
 import Weather from './Weather'
+import Bookmarks from './Bookmarks/Bookmarks'
 
 const WelcomeWrapper = styled.div`
   flex-basis: 100%;
@@ -50,6 +51,7 @@ const Welcome = () => {
       <CheeringWelcome>Hope you have a great day</CheeringWelcome>
       <Clock />
       <Weather />
+      <Bookmarks />
     </WelcomeWrapper>
   )
 }
