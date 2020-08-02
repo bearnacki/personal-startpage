@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { bookmarksList } from '../../../utils/bookmarks-data';
 
 const BookmarksWrapper = styled.div`
-  margin: 20px 0;
+	margin: 20px 0;
 	width: 100%;
 	height: 50%;
 	display: flex;
@@ -45,7 +45,7 @@ const Bookmarks = () => {
 		<BookmarksWrapper>
 			{bookmarksList.map((bookmark) => (
 				<BookmarkWrapper>
-					<a href={bookmark.bookmarkUrl}>
+					<a href={bookmark.bookmarkUrl} target="_blank" rel="noopener noreferrer">
 						{icons.allFile.edges
 							.filter(({ node }) => node.base.includes(bookmark.bookmarkName))
 							.map(({ node }) => <Img fluid={node.childImageSharp.fluid} />)}

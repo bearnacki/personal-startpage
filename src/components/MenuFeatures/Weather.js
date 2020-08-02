@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const WeatherWrapper = styled.div`
-	flex: 1 0 50%;
+	flex: 0 0 50%;
 	text-align: center;
   display: flex;
 	flex-direction: column;
@@ -10,6 +10,7 @@ const WeatherWrapper = styled.div`
 	color: #fff;
 	font-weight: bold;
   padding: 0 10px;
+	z-index: 2;
 `;
 
 const WeatherIcon = styled.img`
