@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Clock from './Clock';
 import Weather from './Weather';
 import Bookmarks from './Bookmarks/Bookmarks';
+import HackerNews from './HackerNews';
 
 const WelcomeWrapper = styled.div`
 	flex-basis: 100%;
@@ -14,7 +15,7 @@ const WelcomeWrapper = styled.div`
 	position: relative;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 	background: inherit;
-	padding: 30px 0;
+	padding: 20px 0 0 0;
 
 	&::before {
 		content: "";
@@ -44,7 +45,7 @@ const CheeringWelcome = styled.p`
 	font-weight: bold;
 	display: block;
 	margin: 0;
-	padding: 10px 0;
+	padding: 5px 0;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	width: 100%;
 	z-index: 2;
@@ -56,7 +57,7 @@ const CheeringWelcome = styled.p`
 		left: 25%;
 		display: block;
 		margin-bottom: 10px;
-		margin-top: 40px;
+		margin-top: 30px;
 		border-bottom: 2px solid #fff;
 		animation: lineMove 3s ease-in-out infinite;
 	}
@@ -93,6 +94,7 @@ const Welcome = () => {
 			<Clock />
 			<Weather />
 			<Bookmarks />
+      <HackerNews />
 		</WelcomeWrapper>
 	);
 };
