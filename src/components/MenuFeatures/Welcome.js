@@ -29,6 +29,7 @@ const WelcomeWrapper = styled.div`
 		filter: blur(5px);
 	}
 `;
+
 const InitialWelcome = styled.p`
 	font-size: 3em;
 	display: block;
