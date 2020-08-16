@@ -29,7 +29,6 @@ const Bookmarks = () => {
 						childImageSharp {
 							fluid {
 								aspectRatio
-								base64
 								src
 								srcSet
 								sizes
