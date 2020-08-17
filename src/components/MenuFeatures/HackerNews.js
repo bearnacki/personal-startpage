@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import LoadingSpinner from './Loading/LoadingSpinner';
 
 const HakerNewsWrapper = styled.div`
 	margin: 20px 0;
@@ -19,11 +20,11 @@ const HakerNewsWrapper = styled.div`
 
 const News = styled.div`
 	flex: 0 0 50%;
-	text-align: center;
 	color: #fff;
 	font-weight: bold;
 	padding: 0 10px;
-	margin: auto 0;
+	margin: 0 0 auto 0;
+	text-align: left;
 
 	a {
 		text-decoration: none;
@@ -36,8 +37,7 @@ const NewsParagraph = styled.p`
 	display: block;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	margin: 0;
-	padding: 10px 5px;
-  text-align: left;
+	padding: 10px 10px;
 `;
 
 const HakerNews = () => {
@@ -47,10 +47,7 @@ const HakerNews = () => {
 		const fetchNews = async () => {
 			let newsIdListFetch = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json');
 
-			if (!newsIdListFetch.ok) {
-				throw new Error(`error: status ${newsIdListFetch.status}`);
-			}
-			else {
+			if (newsIdListFetch.ok) {
 				let newsIdList = await newsIdListFetch.json();
 				let cuttedNewsIdList = newsIdList.slice(0, 6);
 				let newsData = await Promise.all(
@@ -85,7 +82,7 @@ const HakerNews = () => {
 					</News>
 				))
 			) : (
-				<p>Loading</p>
+				<LoadingSpinner />
 			)}
 		</HakerNewsWrapper>
 	);

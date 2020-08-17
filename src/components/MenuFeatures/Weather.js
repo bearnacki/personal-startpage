@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import LoadingSpinner from './Loading/LoadingSpinner';
 
 const WeatherWrapper = styled.div`
 	flex: 0 0 50%;
@@ -58,7 +59,7 @@ const Weather = () => {
 					</WeatherInfo>
         </>
       ) : (
-				<p>Loading</p>
+				<LoadingSpinner />
 			)}
 		</WeatherWrapper>
 	);
