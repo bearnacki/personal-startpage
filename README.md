@@ -48,4 +48,7 @@ export const bookmarksList = [
 
 Next, place in */src/images/bookmark-icon/* folder icons that you want to use as bookmarks. Remeber to use same name like you used in *bookmarkName* property (*ex. gatsby.png*)
 
-6. Have fun and modify you personal start-page whatever you like :grin:
+6. Use *gatsby build* command to build your project and *gatsby serve* to serve the production build of your site.
+
+
+##### Have fun and modify you personal start-page whatever you like :grin:
