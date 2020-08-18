@@ -1,8 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Navigation from './MenuFeatures/Navigation';
 import backgroundImage from '../images/wallhaven-59564.jpg';
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Lato');
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato';
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+`
+
 
 const StyledWrapper = styled.div`
 	position: relative;
@@ -12,29 +27,23 @@ const StyledWrapper = styled.div`
 	min-height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	background-image: url(${backgroundImage});
 	background-size: cover;
 	background-attachment: fixed;
 `;
 
-const MainContentWrapper = styled.div`
-	margin: 80px auto 0 auto;
-	width: 800px;
-	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	background: inherit;
-`;
-
 const Layout = ({ children }) => {
 	return (
-		<StyledWrapper>
-			<Navigation />
-			<MainContentWrapper>{children}</MainContentWrapper>
-		</StyledWrapper>
+		<>
+			<GlobalStyle />
+			<StyledWrapper>
+				<Navigation />
+				<>
+					{children}
+				</>
+			</StyledWrapper>
+		</>
 	);
 };
 
