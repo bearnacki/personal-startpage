@@ -6,7 +6,9 @@ import Bookmarks from './Bookmarks/Bookmarks';
 import HackerNews from './HackerNews';
 
 const WelcomeWrapper = styled.div`
-	flex-basis: 100%;
+	margin: 80px auto 0 5px;
+	width: 800px;
+	height: 100%;
 	text-align: center;
 	color: #fff;
 	display: flex;
