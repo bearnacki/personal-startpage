@@ -1,8 +1,8 @@
 export const getLocalStorageData = (localStorageKey) => {
-  const localData = localStorage.getItem(localStorageKey);
+  const localData = typeof window !== 'undefined' && window.localStorage.getItem(localStorageKey);
   return localData ? JSON.parse(localData) : [];
 }
 
 export const setLocalStorageData = (localStorageKey, localData) => {
-  localStorage.setItem(localStorageKey, JSON.stringify(localData));
+  typeof window !== 'undefined' && window.localStorage.setItem(localStorageKey, JSON.stringify(localData));
 }
