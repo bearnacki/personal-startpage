@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import LoadingSpinner from './Loading/LoadingSpinner';
 
 const HakerNewsWrapper = styled.div`
-	margin: 20px 0;
+	margin: 10px 0;
 	width: 100%;
 	height: 50%;
 	display: flex;
@@ -15,6 +15,7 @@ const HakerNewsWrapper = styled.div`
     font-size: 1.5em;
     display: block;
     width: 100%;
+		margin-top: 0;
   }
 `;
 
@@ -38,6 +39,7 @@ const NewsParagraph = styled.p`
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	margin: 0;
 	padding: 10px 10px;
+	min-height: 40px;
 `;
 
 const HakerNews = () => {
@@ -49,7 +51,7 @@ const HakerNews = () => {
 
 			if (newsIdListFetch.ok) {
 				let newsIdList = await newsIdListFetch.json();
-				let cuttedNewsIdList = newsIdList.slice(0, 6);
+				let cuttedNewsIdList = newsIdList.slice(0, 8);
 				let newsData = await Promise.all(
 					cuttedNewsIdList.map(async (newsId) => {
 						let news = await fetch(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json`);
