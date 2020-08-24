@@ -13,6 +13,7 @@ const NavigationWrapper = styled.nav`
 	align-items: center;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 	background: inherit;
+	z-index: 10;
 
 	&::before {
 		content: "";
