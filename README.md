@@ -2,6 +2,19 @@
 
 Your own localhost start-page, GatsbyJS-powered, fully moddable. If you like this, use whatever you like :smile:
 
+## About
+
+| Start-Page Main View |
+| --- |
+| ![screenshot](/scrshots/startpage.png) |
+
+Current implemented features:
+
+* Weather
+* TodoList
+* Bookmarks
+* HackerNews
+
 ## How to use
 
 1. Install gatsby-cli
