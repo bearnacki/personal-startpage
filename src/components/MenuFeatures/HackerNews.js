@@ -77,7 +77,7 @@ const HakerNews = () => {
       <h3>Latest Hacker News</h3>
 			{hackerNewsData ? (
 				hackerNewsData.map((news) => (
-					<News>
+					<News key={news.title}>
 						<a href={news.url} target="_blank" rel="noopener noreferrer">
 							<NewsParagraph>{news.title} (Score {news.score})</NewsParagraph>
 						</a>

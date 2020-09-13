@@ -43,11 +43,11 @@ const Bookmarks = () => {
 	return (
 		<BookmarksWrapper>
 			{bookmarksList.map((bookmark) => (
-				<BookmarkWrapper>
+				<BookmarkWrapper key={bookmark.bookmarkUrl}>
 					<a href={bookmark.bookmarkUrl} target="_blank" rel="noopener noreferrer">
 						{icons.allFile.edges
 							.filter(({ node }) => node.base.includes(bookmark.bookmarkName))
-							.map(({ node }) => <Img fluid={node.childImageSharp.fluid} />)}
+							.map(({ node }) => <Img key={bookmark.bookmarkName} fluid={node.childImageSharp.fluid} />)}
 					</a>
 				</BookmarkWrapper>
 			))}

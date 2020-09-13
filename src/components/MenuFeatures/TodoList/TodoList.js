@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import {
   getLocalStorageData,
@@ -59,18 +59,6 @@ const ShowAddInputButton = styled.button`
   z-index: 2;
 `
 
-const TodoItem = styled.p`
-  font-size: 1.5em;
-  font-weight: bold;
-  display: block;
-  margin: 0;
-  padding: 5px 30px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  text-align: left;
-  width: 100%;
-  z-index: 2;
-`
-
 const TodoList = () => {
   const initialTodoList = () => getLocalStorageData("todoList") || []
   const [todoList, setTodoList] = useState(initialTodoList)
@@ -106,6 +94,7 @@ const TodoList = () => {
       {todoList &&
         todoList.map((todo, index) => (
           <TodoListItem
+            key={todo}
             index={index}
             removeItemFromList={removeItemFromList}
             todo={todo}
