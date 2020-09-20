@@ -5,13 +5,11 @@ import Welcome from "../components/MenuFeatures/Welcome"
 import TodoList from "../components/MenuFeatures/TodoList/TodoList"
 
 const IndexPage = () => (
-  <>
-    <Layout>
-      <SEO title="Home" />
-      <TodoList />
-      <Welcome />
-    </Layout>
-  </>
+  <Layout>
+    <SEO title="Home" />
+    <TodoList />
+    <Welcome />
+  </Layout>
 )
 
 export default IndexPage
