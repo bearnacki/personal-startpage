@@ -14,6 +14,7 @@ Current implemented features:
 * TodoList
 * Bookmarks
 * HackerNews
+* BoredAPI
 
 ## How to use
 

@@ -1,16 +1,11 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import {
-  getLocalStorageData,
-  setLocalStorageData,
-} from "../../../utils/local-data"
+import { getLocalStorageData, setLocalStorageData } from "../../../utils/local-data"
 import AddTodoListItem from "./AddTodoListItem"
 import TodoListItem from "./TodoListItem"
 
 const TodoListWrapper = styled.div`
-  margin: 80px 5px 0 5px;
-  width: 500px;
-  height: 100%;
+  width: 100%;
   text-align: center;
   color: #fff;
   display: flex;
@@ -34,7 +29,7 @@ const TodoListWrapper = styled.div`
   }
 `
 
-const TodoListHeader = styled.p`
+const TodoListHeader = styled.h3`
   font-size: 1.5em;
   display: block;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
