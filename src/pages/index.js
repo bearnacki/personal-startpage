@@ -7,24 +7,42 @@ import Bored from "../components/MenuFeatures/Bored"
 import styled from "styled-components"
 
 const LeftPanel = styled.div`
-  margin: 80px 5px 0 5px;
-  width: 500px;
+	margin: 80px auto 0 auto;
+  max-width: 500px;
   height: 100%;
   background: inherit;
+
+  @media (max-width: 1400px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 80px 0 0 0;
+  }
 `
 
 const MainPanel = styled.div`
 	margin: 80px auto 0 auto;
-	width: 800px;
+	max-width: 800px;
 	height: 100%;
   background: inherit;
+
+  @media (max-width: 1400px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 80px 0 0 0;
+  }
 `
 
 const RightPanel = styled.div`
-  margin: 80px 5px 0 5px;
-  width: 500px;
+	margin: 80px auto 0 auto;
+  max-width: 500px;
   height: 100%;
   background: inherit;
+
+  @media (max-width: 1900px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 80px 0 0 0;
+  }
 `
 
 const IndexPage = () => (
