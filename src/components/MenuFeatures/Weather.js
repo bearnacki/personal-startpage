@@ -4,6 +4,7 @@ import LoadingSpinner from './Loading/LoadingSpinner';
 
 const WeatherWrapper = styled.div`
 	flex: 0 0 50%;
+	margin: auto 0;
 	text-align: center;
   display: flex;
 	flex-direction: column;
@@ -12,14 +13,21 @@ const WeatherWrapper = styled.div`
 	font-weight: bold;
   padding: 0 10px;
 	z-index: 2;
+
+	@media (max-width: 600px) {
+		flex: 0 0 100%;
+  }
 `;
 
 const WeatherIcon = styled.img`
-	flex-basis: 100%;
-	padding: 0 35%;
+	max-width: 100%;
+	margin: 0 auto;
+`
+const WeatherInfoHeader = styled.div`
+  max-width: 100%;
 `
 const WeatherInfo = styled.div`
-	flex-basis: 100%;
+  max-width: 100%;
 `
 
 const WeatherInfoParagraph = styled.p`
@@ -28,6 +36,7 @@ const WeatherInfoParagraph = styled.p`
 	display: inline-block;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	padding: 0 10px;
+	margin: 0;
 `;
 
 const Weather = () => {
@@ -51,11 +60,17 @@ const Weather = () => {
 			{weatherData.weather ? (
         <>
 					<WeatherIcon src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="weather-icon" />
+					<WeatherInfoHeader>
+						<WeatherInfoParagraph>MAX:</WeatherInfoParagraph>
+						<WeatherInfoParagraph>MIN:</WeatherInfoParagraph>
+						<WeatherInfoParagraph>FEEL:</WeatherInfoParagraph>
+						<WeatherInfoParagraph>HUM:</WeatherInfoParagraph>
+					</WeatherInfoHeader>
 					<WeatherInfo>
-						<WeatherInfoParagraph>MAX: {setCelsiusDegree(weatherData.main.temp_max)} &deg;C</WeatherInfoParagraph>
-						<WeatherInfoParagraph>MIN: {setCelsiusDegree(weatherData.main.temp_min)} &deg;C</WeatherInfoParagraph>
-						<WeatherInfoParagraph>FEEL: {setCelsiusDegree(weatherData.main.feels_like)} &deg;C</WeatherInfoParagraph>
-						<WeatherInfoParagraph>HUM: {weatherData.main.humidity}%</WeatherInfoParagraph>
+						<WeatherInfoParagraph>{setCelsiusDegree(weatherData.main.temp_max)}&deg;C</WeatherInfoParagraph>
+						<WeatherInfoParagraph>{setCelsiusDegree(weatherData.main.temp_min)}&deg;C</WeatherInfoParagraph>
+						<WeatherInfoParagraph>{setCelsiusDegree(weatherData.main.feels_like)}&deg;C</WeatherInfoParagraph>
+						<WeatherInfoParagraph>{weatherData.main.humidity}%</WeatherInfoParagraph>
 					</WeatherInfo>
         </>
       ) : (

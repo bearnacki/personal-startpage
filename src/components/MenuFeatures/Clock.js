@@ -9,6 +9,10 @@ const TimeWrapper = styled.div`
 	padding: 0 10px;
 	margin: auto 0;
 	z-index: 2;
+
+	@media (max-width: 600px) {
+		flex: 0 0 100%;
+  }
 `;
 
 const TimeParagraph = styled.p`
